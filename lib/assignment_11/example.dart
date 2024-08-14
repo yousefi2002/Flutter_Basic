@@ -1,3 +1,4 @@
+import 'package:calculator/assignment_11/infotext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
@@ -23,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 1), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => MyHomePage()),
       );
@@ -50,6 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
+
               radius: 100,
             ),
             SizedBox(
@@ -86,20 +88,22 @@ class TileInfo{
   String name;
   String image;
   String text;
-  TileInfo({required this.name, required this.image, required this.text}) ;
+  String link;
+  TileInfo({required this.name, required this.image, required this.text, required this.link}) ;
 }
+InfoText infoText = InfoText();
     List<TileInfo> items = [
-      TileInfo(name: "Microsoft", image: 'assets/icons/microsoft.jpg', text: 'Microsoft Corporation is an American multinational technology company that has been a key player in the computer industry since its founding in 1975. Headquartered in Redmond, Washington, Microsoft initially gained dominance in the operating systems market during the 1980s and 90s with MS-DOS and Windows'),
-      TileInfo(name: "Nvidia", image: 'assets/icons/nvidia.jpg', text: ''),
-      TileInfo(name: "Apple", image: 'assets/icons/apple.jpg', text: ''),
-      TileInfo(name: "Google", image: 'assets/icons/google.jpg', text: ''),
-      TileInfo(name: "Amazon", image: 'assets/icons/amazon.jpg', text: ''),
-      TileInfo(name: "Facebook", image: 'assets/icons/facebook.jpg', text: ''),
-      TileInfo(name: "TSMC", image: 'assets/icons/tsmc.jpg', text: ''),
-      TileInfo(name: "Broadcom", image: 'assets/icons/broadcom.jpg', text: ''),
-      TileInfo(name: "Tesla", image: 'assets/icons/tesla.jpg', text: ''),
-      TileInfo(name: "Tencent", image: 'assets/icons/tencent.jpg', text: ''),
-];
+      TileInfo(name: "Microsoft", image: 'assets/icons/microsoft.jpg', text: infoText.microsoft, link: ''),
+      TileInfo(name: "Nvidia", image: 'assets/icons/nvidia.jpg', text: infoText.nvidia, link: ''),
+      TileInfo(name: "Apple", image: 'assets/icons/apple.jpg', text: infoText.apple, link: ''),
+      TileInfo(name: "Google", image: 'assets/icons/google.jpg', text: infoText.google, link: ''),
+      TileInfo(name: "Amazon", image: 'assets/icons/amazon.jpg', text: infoText.amazon, link: ''),
+      TileInfo(name: "Facebook", image: 'assets/icons/facebook.jpg', text: '', link: ''),
+      TileInfo(name: "TSMC", image: 'assets/icons/tsmc.jpg', text: '', link: ''),
+      TileInfo(name: "Broadcom", image: 'assets/icons/broadcom.jpg', text: '', link: ''),
+      TileInfo(name: "Tesla", image: 'assets/icons/tesla.jpg', text: '', link: ''),
+      TileInfo(name: "Tencent", image: 'assets/icons/tencent.jpg', text: '', link: ''),
+    ];
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -126,11 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   context: context,
                   builder: (context){
                     return AlertDialog(
-                      title: Text("information about the app"),
+                      title: Text("Top Ten Tech Companies",
+                      style: TextStyle(fontFamily: 'BodoniModa'),),
                       content: SingleChildScrollView(
                         child: ListBody(
                           children: [
-                            Text('This application is developed by Naieb Yousefi')
+                            Text(infoText.about)
                           ],
                         ),
                       ),
@@ -148,25 +153,13 @@ class _MyHomePageState extends State<MyHomePage> {
               }
             },
             itemBuilder: (BuildContext context){
-               return {'Share the app', 'About', 'Exit'}.map((String choice){
-                 return PopupMenuItem(
+              return {'Share the app', 'About', 'Exit'}.map((String choice){
+                return PopupMenuItem(
                    value: choice,
                    child: Text(choice),
                  );
                }
                ).toList();
-              //  [
-             //    PopupMenuItem(
-             //      child: ListTile(leading: Text('Share the app'),)),
-             //    PopupMenuItem(
-             //       child: ListTile(leading: Text('About'),)),
-             //    PopupMenuItem(
-             //       child: ListTile(
-             //         leading: Text('Exit'),
-             //         onTap: (){
-             //         },
-             //      ),),
-             // ];
            }),
         ],
       ),
@@ -236,7 +229,7 @@ class _DetailPageState extends State<DetailPage> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(widget.image1,
                 height: 200,
@@ -252,8 +245,13 @@ class _DetailPageState extends State<DetailPage> {
               ),
               SizedBox(height: 10,),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.pinkAccent[200],
+                ),
                   onPressed: (){},
-                  child: Text('More Details'))
+                  child: Text('More Details',
+                  style: TextStyle(color: Colors.white),),
+              ),
             ],
           ),
         ),
