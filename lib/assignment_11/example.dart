@@ -11,6 +11,8 @@ void main() {
     ),
   );
 }
+
+ // Splash screen -------------------------------------
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -43,15 +45,16 @@ class _SplashScreenState extends State<SplashScreen>
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.blue, Colors.pink],
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft)),
+          gradient: LinearGradient(
+            colors: [Colors.blue, Colors.pink],
+             begin: Alignment.topRight,
+             end: Alignment.bottomLeft,
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-
               radius: 100,
             ),
             SizedBox(
@@ -83,7 +86,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
-
+ // Data class --------------------------------------------------
 class TileInfo{
   String name;
   String image;
@@ -98,12 +101,14 @@ InfoText infoText = InfoText();
       TileInfo(name: "Apple", image: 'assets/icons/apple.jpg', text: infoText.apple, link: ''),
       TileInfo(name: "Google", image: 'assets/icons/google.jpg', text: infoText.google, link: ''),
       TileInfo(name: "Amazon", image: 'assets/icons/amazon.jpg', text: infoText.amazon, link: ''),
-      TileInfo(name: "Facebook", image: 'assets/icons/facebook.jpg', text: '', link: ''),
-      TileInfo(name: "TSMC", image: 'assets/icons/tsmc.jpg', text: '', link: ''),
-      TileInfo(name: "Broadcom", image: 'assets/icons/broadcom.jpg', text: '', link: ''),
-      TileInfo(name: "Tesla", image: 'assets/icons/tesla.jpg', text: '', link: ''),
-      TileInfo(name: "Tencent", image: 'assets/icons/tencent.jpg', text: '', link: ''),
+      TileInfo(name: "Facebook", image: 'assets/icons/facebook.jpg', text: infoText.facebook, link: ''),
+      TileInfo(name: "TSMC", image: 'assets/icons/tsmc.jpg', text: infoText.tsmc, link: ''),
+      TileInfo(name: "Broadcom", image: 'assets/icons/broadcom.jpg', text: infoText.broadcom, link: ''),
+      TileInfo(name: "Tesla", image: 'assets/icons/tesla.jpg', text: infoText.tesla, link: ''),
+      TileInfo(name: "Tencent", image: 'assets/icons/tencent.jpg', text: infoText.tencent, link: ''),
     ];
+
+    // Main page -----------------------------------------
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -205,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
+// Details page ------------------------------------------
 class DetailPage extends StatefulWidget {
   final String text1;
   final String companyName;

@@ -76,4 +76,79 @@ Furthermore, the company has been at the forefront of developing autonomous deli
 Despite its successes, Amazon has faced increasing scrutiny and regulatory challenges worldwide, particularly regarding its labor practices, data privacy issues, and antitrust concerns. 
 Nevertheless, Amazon's commitment to innovation and its relentless focus on customer experience suggest that it will continue to be a dominant force in the global market for years to come.  
   ''';
+  String facebook = ''' 
+Meta, the parent company of Facebook, has been at the forefront of significant technological and business innovations. 
+Founded in 2004, Facebook revolutionized the way people connect and share online, eventually expanding its influence with the acquisition and integration of platforms like Instagram, WhatsApp, and Messenger. 
+These platforms now serve billions of users globally, making Meta a cornerstone in the digital communication landscape. Over the years, Meta has strategically pivoted towards emerging technologies, notably focusing on augmented and virtual reality (AR and VR) through its Reality Labs division. 
+This shift aligns with its ambitious vision of building the metaverse, a virtual world aimed at transforming how people interact digitally. The company is also heavily invested in artificial intelligence (AI), which is becoming a core component of its services and future plans.
+AI is being leveraged to enhance user experience, improve content moderation, and drive innovations in the metaverse.  
+Financially, Meta continues to demonstrate resilience and growth, despite facing regulatory challenges, especially in the European Union and the United States. 
+In the first quarter of 2024, the company reported strong financial results with a significant increase in revenue and net income compared to the previous year. 
+This growth is largely driven by the continued success of its Family of Apps, alongside strategic advancements in AI and Reality Labs. 
+However, Meta faces ongoing scrutiny over issues such as privacy, data security, and the societal impact of its platforms. 
+The company is navigating these challenges while continuing to invest in new technologies and maintaining its commitment to long-term innovation. 
+As Meta advances, its focus on building immersive experiences and integrating AI more deeply into its ecosystem is expected to shape the future of digital interaction, aiming to keep it at the cutting edge of technological evolution. 
+  ''';
+  String tsmc = '''
+Taiwan Semiconductor Manufacturing Company (TSMC), founded in 1987, revolutionized the semiconductor industry by pioneering the dedicated IC foundry business model. 
+TSMC is headquartered in Hsinchu, Taiwan, and is the world’s largest and most valuable semiconductor company, playing a critical role in global tech infrastructure. 
+The company provides foundry services to fabless companies and integrated device manufacturers, producing a wide range of semiconductor products that are integral to high-performance computing, smartphones, automotive applications, the Internet of Things (IoT), and consumer electronics. 
+TSMC operates several advanced fabrication plants in Taiwan, including four GIGAFAB® facilities capable of producing 12-inch wafers, which are critical for cutting-edge semiconductor technology. 
+Additionally, the company has expanded its manufacturing footprint internationally with subsidiaries like TSMC Nanjing Company Limited in China. 
+The company’s total production capacity exceeded 16 million 12-inch equivalent wafers in 2023, reflecting its massive scale and ability to meet the diverse needs of over 500 customers globally.
+
+TSMC’s technological advancements and commitment to innovation have cemented its position at the forefront of the semiconductor industry. 
+The company continues to push the boundaries of Moore’s Law, investing heavily in research and development to produce smaller, faster, and more efficient chips. One of TSMC’s significant achievements is its leadership in the development of advanced process nodes, such as the 5nm and 3nm technologies, which are vital for next-generation electronics. 
+This relentless innovation has made TSMC a key supplier for tech giants like Apple, Qualcomm, and Nvidia, who rely on TSMC’s cutting-edge manufacturing capabilities to power their products. In addition to its technological prowess, TSMC is also committed to sustainability, implementing policies to reduce its environmental footprint, including investments in renewable energy and water conservation. 
+As the demand for semiconductors continues to grow, TSMC remains a pivotal player in shaping the future of global technology, ensuring the continued advancement of computing power and digital innovation across various industries.  
+  ''';
+  String broadcom = '''
+Broadcom Inc., originally founded in 1991, is a global technology leader that designs, develops, and supplies a broad range of semiconductor and infrastructure software solutions. 
+Over the decades, Broadcom has grown through strategic mergers and acquisitions, most notably its \$37 billion acquisition of Broadcom Corporation in 2016, which transformed the company into a formidable force in the semiconductor industry. 
+Headquartered in San Jose, California, Broadcom operates across several major technology markets, including data centers, networking, broadband, wireless, storage, and industrial sectors. 
+The company’s product portfolio is vast, ranging from chips that power data center networking equipment to components used in mobile devices and enterprise software solutions that enhance security and storage efficiency. 
+Broadcom’s technology is integral to the infrastructure that supports the internet, data centers, and mobile communications, making it a backbone of modern digital life.
+
+In recent years, Broadcom has continued to expand its influence, particularly through its focus on high-margin, infrastructure software solutions alongside its semiconductor offerings. 
+This dual focus has allowed Broadcom to sustain strong financial performance, with significant revenue contributions from both its semiconductor solutions and infrastructure software segments. 
+The company has also made significant strides in the field of artificial intelligence (AI), with its custom AI chips being used in various advanced computing applications, including those by leading tech giants. 
+Despite its success, Broadcom faces challenges typical of the tech industry, including navigating supply chain disruptions and the competitive landscape of semiconductor innovation. 
+Additionally, the company is actively investing in research and development to maintain its technological edge and meet the growing demands of industries like AI, 5G, and cloud computing. 
+Broadcom’s strategy of balancing organic growth with strategic acquisitions has positioned it as a critical player in the global technology ecosystem, ensuring its continued relevance and leadership in the years to come.
+''';
+  String tesla = '''
+Tesla, Inc., founded in 2003 by engineers Martin Eberhard and Marc Tarpenning, and later joined by Elon Musk, has revolutionized the automotive and energy sectors. 
+The company's mission is to accelerate the world’s transition to sustainable energy. 
+Tesla began by producing electric vehicles (EVs), starting with the Roadster, which was the first fully electric sports car, and has since expanded its lineup to include the popular Model S, Model X, Model 3, and Model Y. 
+These vehicles are designed to be the most energy-efficient cars on the market, incorporating advanced software and hardware to ensure high performance, safety, and a superior user experience. 
+Tesla's vehicles are equipped with over-the-air software updates, allowing the company to continuously improve its products and add new features after they have been delivered to customers. 
+This unique capability has positioned Tesla as a leader not only in electric vehicles but also in automotive software innovation.
+
+Beyond automobiles, Tesla is deeply involved in the renewable energy sector. 
+The company produces solar panels, solar roof tiles, and energy storage solutions such as the Powerwall, Powerpack, and Megapack. 
+These products are designed to work seamlessly with its electric vehicles, creating a comprehensive ecosystem of sustainable energy solutions. 
+Tesla's energy products are aimed at both residential and commercial markets, helping to reduce reliance on fossil fuels. 
+The company has also made significant strides in battery technology, which is crucial for both its vehicles and energy storage solutions. 
+Tesla’s Gigafactories, strategically located around the globe, are integral to its mission, producing the batteries and vehicles needed to scale up its sustainable energy ambitions. 
+As of 2024, Tesla continues to push the boundaries of innovation, focusing on increasing production capacity, enhancing battery technology, and expanding its product offerings to meet the growing demand for sustainable energy solutions worldwide.  
+  ''';
+  String tencent = '''
+Tencent Holdings, founded in 1998 and headquartered in Shenzhen, China, is one of the world’s largest technology companies, with a significant influence in social media, entertainment, and various digital services. 
+Initially starting with the QQ messaging service, Tencent rapidly expanded its portfolio to include WeChat, a multifunctional social networking app with over 1.3 billion monthly active users. WeChat integrates messaging, social media, and payment services, making it a critical platform in everyday life in China. 
+Tencent's ability to create and manage such platforms has been central to its growth, turning it into a dominant force in the tech industry. 
+The company operates through multiple business groups, each focusing on different technological advancements. 
+These include the Interactive Entertainment Group, which leads in global online gaming and eSports, and the Cloud & Smart Industries Group, which drives digital transformation across various sectors through cloud computing and artificial intelligence. 
+Tencent’s influence extends beyond social media and entertainment; it is also a key player in the financial technology space, with WeChat Pay being one of the largest mobile payment platforms in China, used for a myriad of transactions, from online shopping to in-store purchases.
+
+Furthermore, Tencent has been strategically expanding its global footprint through investments, acquisitions, and partnerships. 
+The company has stakes in many major tech firms worldwide, including Tesla, Snap Inc., and Epic Games, further solidifying its position as a global tech giant. 
+Tencent’s commitment to innovation is evident in its diverse product range and continuous exploration of new business areas, such as smart industries and cloud services. 
+The company’s Corporate Development Group plays a vital role in this expansion, focusing on mergers, acquisitions, and strategic investments that align with its long-term vision. 
+Despite its success, Tencent faces challenges, including regulatory scrutiny from the Chinese government, particularly around data privacy and the potential monopolistic behavior of its digital ecosystems. 
+However, Tencent’s adaptability and robust business model have allowed it to maintain its leadership position in the tech industry, driving significant economic impact both in China and globally. 
+Its ability to integrate and innovate across various technological domains ensures that Tencent remains at the forefront of the digital revolution, continuously shaping the way people interact with technology in their daily lives.
+''';
 }
+
+
+
