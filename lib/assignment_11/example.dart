@@ -56,6 +56,7 @@ class _SplashScreenState extends State<SplashScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
+              backgroundImage: AssetImage('assets/icons/tech.jpg'),
               radius: 100,
             ),
             SizedBox(
@@ -124,10 +125,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.purple[200],
       appBar: AppBar(
+        foregroundColor: Colors.white,
         backgroundColor: Colors.purple[500],
         title: Text("Top Ten Tech Companies"),
         actions: [
           PopupMenuButton(
+            color: Colors.white,
             onSelected: (String choice){
               if(choice == 'Share the app'){
                 Share.share('Check out this amazing app!');
@@ -236,45 +239,43 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       backgroundColor: Colors.deepOrange[100],
       appBar: AppBar(
+        foregroundColor: Colors.white,
         centerTitle: true,
         backgroundColor: Colors.purple,
         title: Text(widget.companyName),
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(widget.image1,
-                height: 200,
-                width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(widget.image1,
+              height: 200,
+              width: double.infinity,
+            ),
+            SizedBox(height: 10,),
+            Text(
+              widget.text1,
+              style: TextStyle(
+                fontSize: 16,
+                height: 1.5,
               ),
-              SizedBox(height: 10,),
-              Text(
-                widget.text1,
-                style: TextStyle(
-                  fontSize: 16,
-                  height: 1.5,
-                ),
+            ),
+            SizedBox(height: 10,),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.purple[500],
               ),
-              SizedBox(height: 10,),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple[500],
-                ),
-                  onPressed: () async {
-                  if(await canLaunchUrl(Uri.parse(widget.url))){
-                    await launchUrl(Uri.parse(widget.url));
-                  }else{
-                    throw 'could not launch ${widget.url}';
-                  }
-                  },
-                  child: Text('More Details',
-                  style: TextStyle(color: Colors.white),),
-              ),
-            ],
-          ),
+                onPressed: () async {
+                if(await canLaunchUrl(Uri.parse(widget.url))){
+                  await launchUrl(Uri.parse(widget.url));
+                }else{
+                  throw 'could not launch ${widget.url}';
+                }
+                },
+                child: Text('More Details',
+                style: TextStyle(color: Colors.white),),
+            ),
+          ],
         ),
       ),
     );
