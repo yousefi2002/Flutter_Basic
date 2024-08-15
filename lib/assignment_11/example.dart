@@ -2,6 +2,7 @@ import 'package:calculator/assignment_11/infotext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => MyHomePage()),
       );
@@ -46,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen>
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.blue, Colors.pink],
+            colors: [Colors.deepOrange, Colors.purple],
              begin: Alignment.topRight,
              end: Alignment.bottomLeft,
           ),
@@ -121,9 +122,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.purple[200],
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent[100],
+        backgroundColor: Colors.purple[500],
         title: Text("Top Ten Tech Companies"),
         actions: [
           PopupMenuButton(
@@ -148,7 +149,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         TextButton(
                           onPressed: (){
                             Navigator.of(context).pop();
-                          }, child: Text('Close'))
+                          },
+                          child: Text('Close'),
+                        ),
                       ],
                     );
                   }
@@ -182,18 +185,17 @@ class _MyHomePageState extends State<MyHomePage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
-              tileColor: Colors.pink[100],
+              tileColor: Colors.deepOrange[400],
               title: Text(items[index].name),
               onTap: () {},
-              hoverColor: Colors.blue[200],
+              hoverColor: Colors.blue[100],
               minLeadingWidth: 60,
               trailing: IconButton(
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) =>
-                        DetailPage(companyName: items[index].name, image1: items[index].image,text1: items[index].text,
-                      ),
+                        DetailPage(companyName: items[index].name, image1: items[index].image, text1: items[index].text, url: 'https://www.bing.com/search?q=top+tech+company&cvid=2b054260324244e3a731cd2b8bc807fe&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTExNTMwajBqMagCA7ACAQ&FORM=ANAB01&PC=U531'),
                     ),
                   );
                   },
@@ -212,11 +214,18 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 // Details page ------------------------------------------
 class DetailPage extends StatefulWidget {
+  final String url;
   final String text1;
   final String companyName;
   final String image1;
-   const DetailPage({super.key, required this.companyName, required this.image1, required this.text1});
 
+  const DetailPage({
+    super.key,
+    required this.companyName,
+    required this.image1,
+    required this.text1,
+    required this.url,
+  });
   @override
   State<DetailPage> createState() => _DetailPageState();
 }
@@ -225,9 +234,10 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepOrange[100],
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.pinkAccent[100],
+        backgroundColor: Colors.purple,
         title: Text(widget.companyName),
       ),
       body: SingleChildScrollView(
@@ -251,9 +261,15 @@ class _DetailPageState extends State<DetailPage> {
               SizedBox(height: 10,),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pinkAccent[200],
+                  backgroundColor: Colors.purple[500],
                 ),
-                  onPressed: (){},
+                  onPressed: () async {
+                  if(await canLaunchUrl(Uri.parse(widget.url))){
+                    await launchUrl(Uri.parse(widget.url));
+                  }else{
+                    throw 'could not launch ${widget.url}';
+                  }
+                  },
                   child: Text('More Details',
                   style: TextStyle(color: Colors.white),),
               ),
