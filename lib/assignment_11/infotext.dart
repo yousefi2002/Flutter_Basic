@@ -7,7 +7,8 @@ The Top Ten Tech Companies is an application that provide information about top 
 In today's world, technology is improving in a fast paced, it is important to know who and which companies are in charg of that.
 With this app you can get to know famous tech company that you use their product every day, informations which are difficult to
 them in other places.
-                     Developed by:  NAIEB YOUSEFI.
+
+Developed by:  NAIEB YOUSEFI.
 '''  ;
   String microsoft = '''
 Microsoft Corporation, founded in 1975 by Bill Gates and Paul Allen, has grown to become one of the most influential technology companies in the world.
