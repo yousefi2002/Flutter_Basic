@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 20), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => MyHomePage()),
       );
@@ -56,7 +56,8 @@ class _SplashScreenState extends State<SplashScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              backgroundImage: AssetImage('assets/icons/tech.jpg'),
+
+              backgroundImage: AssetImage('assets/icons/google.jpg',),
               radius: 100,
             ),
             SizedBox(
