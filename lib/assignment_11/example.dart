@@ -27,9 +27,9 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => MyHomePage()),
+        MaterialPageRoute(builder: (_) => const MyHomePage()),
       );
     });
   }
@@ -45,14 +45,14 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.deepOrange, Colors.blue, Colors.purple],
              begin: Alignment.topRight,
              end: Alignment.bottomLeft,
           ),
         ),
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: Colors.purple[500],
-        title: Text("Top Ten Tech Companies"),
+        title: const Text("Top Ten Tech Companies"),
         actions: [
           PopupMenuButton(
             color: Colors.white,
@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   context: context,
                   builder: (context){
                     return AlertDialog(
-                      title: Text("Top Ten Tech Companies",
+                      title: const Text("Top Ten Tech Companies",
                       style: TextStyle(fontFamily: 'BodoniModa'),),
                       content: SingleChildScrollView(
                         child: ListBody(
@@ -153,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: (){
                             Navigator.of(context).pop();
                           },
-                          child: Text('Close'),
+                          child: const Text('Close'),
                         ),
                       ],
                     );
@@ -206,14 +206,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   );
                 },
-                  icon: Icon(Icons.arrow_forward,
+                  icon: const Icon(Icons.arrow_forward,
                 ),
               ),
             ),
           );
         },
         separatorBuilder: (BuildContext context, int index) {
-          return SizedBox(
+          return const SizedBox(
             height: 10,
           );
         },
@@ -258,10 +258,10 @@ class _DetailPageState extends State<DetailPage> {
               height: 200,
               width: double.infinity,
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Text(
               widget.text1,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 height: 1.5,
               ),
@@ -277,11 +277,11 @@ class _DetailPageState extends State<DetailPage> {
                   throw 'could not launch ${widget.url}';
                 }
               },
-                child: Text('More Details',
+                child: const Text('More Details',
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
           ],
         ),
       ),
