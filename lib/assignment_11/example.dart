@@ -56,8 +56,7 @@ class _SplashScreenState extends State<SplashScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-
-              backgroundImage: AssetImage('assets/icons/google.jpg',),
+              backgroundImage: AssetImage('assets/icons/company.jpg',),
               radius: 100,
             ),
             SizedBox(
@@ -261,7 +260,7 @@ class _DetailPageState extends State<DetailPage> {
                 height: 1.5,
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 5,),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple[500],
