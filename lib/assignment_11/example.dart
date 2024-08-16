@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   void disposed() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: SystemUiOverlay.values);
+      overlays: SystemUiOverlay.values);
     super.dispose();
   }
 
@@ -93,22 +93,22 @@ class TileInfo{
   String name;
   String image;
   String text;
-  String link;
-  TileInfo({required this.name, required this.image, required this.text, required this.link}) ;
+  TileInfo({required this.name, required this.image, required this.text}) ;
 }
+
 InfoText infoText = InfoText();
-    List<TileInfo> items = [
-      TileInfo(name: "Microsoft", image: 'assets/icons/microsoft.jpg', text: infoText.microsoft, link: ''),
-      TileInfo(name: "Nvidia", image: 'assets/icons/nvidia.jpg', text: infoText.nvidia, link: ''),
-      TileInfo(name: "Apple", image: 'assets/icons/apple.jpg', text: infoText.apple, link: ''),
-      TileInfo(name: "Google", image: 'assets/icons/google.jpg', text: infoText.google, link: ''),
-      TileInfo(name: "Amazon", image: 'assets/icons/amazon.jpg', text: infoText.amazon, link: ''),
-      TileInfo(name: "Facebook", image: 'assets/icons/facebook.jpg', text: infoText.facebook, link: ''),
-      TileInfo(name: "TSMC", image: 'assets/icons/tsmc.jpg', text: infoText.tsmc, link: ''),
-      TileInfo(name: "Broadcom", image: 'assets/icons/broadcom.jpg', text: infoText.broadcom, link: ''),
-      TileInfo(name: "Tesla", image: 'assets/icons/tesla.jpg', text: infoText.tesla, link: ''),
-      TileInfo(name: "Tencent", image: 'assets/icons/tencent.jpg', text: infoText.tencent, link: ''),
-    ];
+  List<TileInfo> items = [
+    TileInfo(name: "Microsoft", image: 'assets/icons/microsoft.jpg', text: infoText.microsoft),
+    TileInfo(name: "Nvidia", image: 'assets/icons/nvidia.jpg', text: infoText.nvidia),
+    TileInfo(name: "Apple", image: 'assets/icons/apple.jpg', text: infoText.apple),
+    TileInfo(name: "Google", image: 'assets/icons/google.jpg', text: infoText.google),
+    TileInfo(name: "Amazon", image: 'assets/icons/amazon.jpg', text: infoText.amazon),
+    TileInfo(name: "Facebook", image: 'assets/icons/facebook.jpg', text: infoText.facebook),
+    TileInfo(name: "TSMC", image: 'assets/icons/tsmc.jpg', text: infoText.tsmc),
+    TileInfo(name: "Broadcom", image: 'assets/icons/broadcom.jpg', text: infoText.broadcom),
+    TileInfo(name: "Tesla", image: 'assets/icons/tesla.jpg', text: infoText.tesla),
+    TileInfo(name: "Tencent", image: 'assets/icons/tencent.jpg', text: infoText.tencent),
+  ];
 
     // Main page -----------------------------------------
 class MyHomePage extends StatefulWidget {
@@ -168,10 +168,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 return PopupMenuItem(
                    value: choice,
                    child: Text(choice),
-                 );
-               }
-               ).toList();
-           }),
+                );
+              }
+            ).toList();
+          }),
         ],
       ),
       body: ListView.separated(
@@ -197,12 +197,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) =>
-                        DetailPage(companyName: items[index].name, image1: items[index].image, text1: items[index].text, url: 'https://www.bing.com/search?q=top+tech+company&cvid=2b054260324244e3a731cd2b8bc807fe&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTExNTMwajBqMagCA7ACAQ&FORM=ANAB01&PC=U531'),
+                      builder: (_) => DetailPage(
+                        companyName: items[index].name,
+                        image1: items[index].image,
+                        text1: items[index].text,
+                        url: 'https://www.bing.com/search?q=top+tech+company&cvid=2b054260324244e3a731cd2b8bc807fe&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTExNTMwajBqMagCA7ACAQ&FORM=ANAB01&PC=U531',
+                      ),
                     ),
                   );
-                  },
-                  icon: Icon(Icons.arrow_forward)),
+                },
+                  icon: Icon(Icons.arrow_forward,
+                ),
+              ),
             ),
           );
         },
@@ -270,9 +276,10 @@ class _DetailPageState extends State<DetailPage> {
                 }else{
                   throw 'could not launch ${widget.url}';
                 }
-                },
+              },
                 child: Text('More Details',
-                style: TextStyle(color: Colors.white),),
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             SizedBox(height: 30,),
           ],
