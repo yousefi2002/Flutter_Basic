@@ -260,7 +260,6 @@ class _DetailPageState extends State<DetailPage> {
                 height: 1.5,
               ),
             ),
-            SizedBox(height: 5,),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple[500],
@@ -275,6 +274,7 @@ class _DetailPageState extends State<DetailPage> {
                 child: Text('More Details',
                 style: TextStyle(color: Colors.white),),
             ),
+            SizedBox(height: 30,),
           ],
         ),
       ),
